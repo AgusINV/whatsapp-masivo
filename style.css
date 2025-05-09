@@ -1,0 +1,303 @@
+/* ==========================================
+   Nueva Estética: Minimalista y Formal
+   ========================================== */
+
+body {
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  background: #f3f6fa;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  z-index: 0;
+  left: 0; right: 0; top: 0; bottom: 0;
+  background: none;
+}
+
+/* Fondo minimalista seguro */
+#background-scene {
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.container {
+  background: #fff;
+  max-width: 500px;
+  margin: 56px auto 32px auto;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px 0 #223a5540, 0 1.4px 6px #9db5dd33;
+  padding: 2.2em 1.65em 2em 1.65em;
+  border: 1.7px solid #e6e8ef;
+  position: relative;
+  z-index: 2;
+}
+
+/* Header styles */
+h1, h2 {
+  color: #173c55;
+  letter-spacing: 1.2px;
+  text-align: center;
+  text-shadow: none;
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+}
+
+h1 {
+  font-size: 1.75em;
+  margin-bottom: 0.7em;
+  font-weight: bold;
+}
+h2 {
+  font-size: 1.08em;
+  margin-top: 1.6em;
+  margin-bottom: .6em;
+  font-weight: 500;
+  color: #244c92;
+}
+
+/* Buttons minimalista */
+button, .remover {
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+  background: linear-gradient(93deg,#184366 15%, #6fcfbe 94%);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: .58em 1.1em;
+  font-size: 1em;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 1px 4px #b7d1ee2a;
+  margin-top: .15em;
+  margin-bottom: .1em;
+  transition: background .13s, box-shadow .13s, color .13s;
+}
+button:active, .remover:active {
+  background: linear-gradient(93deg,#306688 12%, #5aada1 94%);
+  color: #e7f4ff;
+}
+button:hover, .remover:hover {
+  background: linear-gradient(91deg,#3399b4 22%, #3fd0b6 97%);
+}
+
+.remover {
+  background: linear-gradient(91deg,#c92d37 25%,#476685 75%);
+  color: #fff;
+  border: none;
+  padding: 0.32em 0.93em;
+  border-radius: 24px;
+  font-size: 1em;
+  margin-left: .4em;
+  font-weight: bold;
+  box-shadow: none;
+}
+.remover:hover {
+  background: linear-gradient(91deg,#e74a43 38%,#657ba8 76%);
+  color: #fffce2;
+}
+
+/* Inputs */
+input[type="text"], input[type="tel"], textarea {
+  font-family: inherit;
+  padding: 0.6em;
+  border: 1.5px solid #bcd4e2;
+  background: #f9fbfd;
+  border-radius: 5px;
+  outline: none;
+  width: 100%;
+  font-size: 1em;
+  margin-bottom: 0.32em;
+  box-shadow: none;
+  color: #193555;
+  transition: background .19s, border .14s;
+}
+input:focus, textarea:focus {
+  background: #f2f6fb;
+  border-color: #4dedc2;
+}
+
+label {
+  color: #213c68;
+  margin-top: .7em;
+  font-size: 1em;
+  letter-spacing: 0.05px;
+  font-weight: 600;
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+}
+
+/* Persona Inputs */
+.persona-inputs {
+  display: flex;
+  gap: 0.33em;
+  margin-bottom: .4em;
+  align-items: center;
+}
+.persona-inputs input {
+  flex: 1 1 0;
+}
+
+/* Estado WhatsApp */
+#conexionWhatsApp {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  margin: 1em 0 .5em 0;
+}
+
+#estadoConexion.desconectado {
+  color: #aa1528;
+  background: #f8e6eb;
+  border-radius: 4px;
+  padding: 0.25em .58em;
+  font-size: 1em;
+  border: 1.1px solid #f7ceda;
+  font-weight: 500;
+}
+#estadoConexion.conectado {
+  color: #389363;
+  background: #e7fbf3;
+  border-radius: 4px;
+  padding: 0.25em .58em;
+  font-size: 1em;
+  border: 1.1px solid #a0e5c4;
+}
+
+#qrContainer {
+  background: #f8fafd;
+  display: inline-block;
+  padding: 1em 2em;
+  border-radius: 10px;
+  border: 1.5px solid #dbe9ef;
+  box-shadow: 0 3px 15px #1550860b;
+}
+
+.adjuntos-container label {
+  margin-top: 0.8em;
+  display: block;
+  font-weight: 400;
+  color: #265088;
+}
+#adjuntsPreview, #audioPreview, #videoPreview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4em;
+  margin-bottom: .3em;
+}
+.audio-file-preview, .video-file-preview {
+  background: #e8f3fa;
+  border-radius: 5px;
+  padding: .33em .6em .28em .2em;
+  font-size: 1em;
+  display: flex;
+  align-items: center;
+  gap: .18em;
+  color: #1b314b;
+  border: 1px solid #b7dbe6;
+  box-shadow: 0 1.2px 2.5px #bcdffc26;
+  font-family: inherit;
+}
+.audio-file-preview svg, .video-file-preview svg {
+  width: 18px;
+  height: 18px;
+  margin-right: 3px;
+}
+
+/* Enlaces/Estados */
+#enlacesGenerados {
+  display: flex;
+  flex-direction: column;
+  gap: 0.67em;
+  margin-top: 1em;
+  background: none;
+}
+
+.wa-link, .msg-status {
+  display: block;
+  margin-bottom: .28em;
+  font-size: 1em;
+  word-break: break-word;
+  font-family: inherit;
+  color: #183466;
+  text-shadow: none;
+}
+
+.wa-link {
+  padding: .22em .58em;
+  background: linear-gradient(90deg,#e0f7fa 10%,#f4fcff 94%);
+  border: 1px solid #bce1eb;
+  border-radius: 4.5px;
+  font-size: 1em;
+  font-family: inherit;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background .15s, border .12s, color .11s;
+}
+.wa-link:hover {
+  background: linear-gradient(87deg,#f4fffb 15%,#eaf7fa 95%);
+  border-color: #37c1ca;
+  color: #118e72;
+}
+
+.msg-status.exito {
+  color: #119963;
+  background: #ecf8f2;
+  border: 1px solid #a8e2cf;
+  border-radius: 4.5px;
+  padding: .37em .6em;
+  font-family: inherit;
+  box-shadow: 0 1.5px 8px #b9f2d72a;
+}
+
+.msg-status.error {
+  color: #b12644;
+  background: #f9ecf0;
+  border: 1px solid #f3c1d9;
+  border-radius: 4.5px;
+  padding: .37em .6em;
+  font-family: inherit;
+  box-shadow: 0 1.3px 7px #edc2ca32;
+}
+
+::-webkit-scrollbar {
+  width: 9px;
+  background: #e3e9f2;
+}
+::-webkit-scrollbar-thumb {
+  background: #dae2eb;
+  border: 2px solid #e9f6fb;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #afb8c4;
+}
+
+small {
+  color: #385482;
+  background: #f3f7fa;
+  display: block;
+  margin-top: 1.4em;
+  margin-bottom: -.5em;
+  font-size: .99em;
+  border-radius: 8px;
+  padding: 1em 0.8em .95em 0.8em;
+  border: 1.5px solid #b4d6ee;
+  box-shadow: 0 1.7px 6px #b4d6ee19;
+  font-family: inherit;
+  line-height: 1.48;
+}
+
+@media (max-width:600px) {
+  .container {
+    max-width: 98vw;
+    padding: 1.08em 0.28em 1.1em 0.28em;
+    font-size:1em;
+  }
+  h1,h2{font-size:1em;}
+}

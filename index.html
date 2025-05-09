@@ -1,0 +1,65 @@
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width,initial-scale=1.0" />
+  <title>Envío Masivo WhatsApp</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+  <!-- Fondo minimalista/formal -->
+  <div id="background-scene">
+    <!-- Fondo con degradado suave minimalista formal (sin autos ni edificios) -->
+    <svg viewBox="0 0 1600 900" width="100%" height="100%" preserveAspectRatio="none" style="position:absolute;top:0;left:0;z-index:0;">
+      <defs>
+        <linearGradient id="formalGrad" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#f3f6fa"/>
+          <stop offset="80%" stop-color="#e4eaf6"/>
+          <stop offset="100%" stop-color="#c9d0e0"/>
+        </linearGradient>
+        <radialGradient id="radialLight" cx="0.7" cy="0.25" r="0.75">
+          <stop offset="0%" stop-color="#fff" stop-opacity="0.7"/>
+          <stop offset="100%" stop-color="#e4eaf6" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <rect x="0" y="0" width="1600" height="900" fill="url(#formalGrad)" />
+      <ellipse cx="1200" cy="200" rx="400" ry="240" fill="url(#radialLight)" />
+    </svg>
+  </div>
+
+  <div class="container">
+    <h1>Envío Masivo de Mensajes WhatsApp</h1>
+    <form id="mensajeForm">
+      <div id="personas"></div>
+      <button type="button" id="agregarPersona">Agregar Persona</button>
+      <label for="mensajeGeneral">Mensaje a enviar</label>
+      <textarea id="mensajeGeneral" required rows="4" placeholder="Escribe tu mensaje aquí..."></textarea>
+      <div class="adjuntos-container">
+        <label>Adjuntar audio(s) (opcional):</label>
+        <input type="file" id="audioInput" accept="audio/*" multiple>
+        <div id="audioPreview"></div>
+        <label>Adjuntar video(s) (opcional):</label>
+        <input type="file" id="videoInput" accept="video/*" multiple>
+        <div id="videoPreview"></div>
+      </div>
+      <div id="conexionWhatsApp">
+        <button type="button" id="conectarWhatsApp">Conectar WhatsApp</button>
+        <span id="estadoConexion" class="desconectado">No conectado</span>
+        <div id="qrContainer" style="display:none;text-align:center;margin-top:1em"></div>
+      </div>
+      <button type="submit" id="enviarBtn">Enviar mensajes masivamente</button>
+    </form>
+    <h2>Mensajes enviados / Estado</h2>
+    <div id="enlacesGenerados"></div>
+    <small>
+      * Esta herramienta intenta enviar mensajes automáticos usando WhatsApp Web. Por la política de WhatsApp, los mensajes automáticos a números no opt-in no están permitidos y pueden violar los Términos de Servicio.<br>
+      * Para usar el envío directo, primero debes conectar tu WhatsApp escaneando el QR y dar permisos en tu navegador.<br>
+      * Si no conecta, puedes seguir usando los enlaces manuales.<br>
+      <br>
+      <b>Aviso!</b> Esta función requiere WhatsApp Web y puede dejar de funcionar si WhatsApp bloquea los envíos automatizados.<br>
+      <b>Los audios y videos se enviarán sólo en modo conectado. En modo manual, primero conecta WhatsApp para poder enviar medios.</b>
+    </small>
+  </div>
+  <script src="app.js" type="module"></script>
+</body>
+</html>
